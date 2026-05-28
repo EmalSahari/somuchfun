@@ -297,12 +297,12 @@ function AboutAlbum() {
       {/* Background photo */}
       <div className="absolute inset-0">
         <img
-          src="/youngthug2.jpg"
+          src="/youngthug1.jpg"
           alt=""
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover object-top opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
       </div>
 
       {/* Content */}
