@@ -25,6 +25,8 @@ const TRACKS = [
   { n: '18', title: 'Original',              feat: 'Gunna & Lil Baby' },
 ]
 
+const SPOTIFY_ALBUM_ID = '1bnHPO4dKK7IjvgrtVBcQh'
+
 const COLORS = ['#A8E847', '#FF2EC1', '#1E90FF', '#FFD700', '#FF6B35', '#B8F']
 
 const TOUR = [
@@ -126,7 +128,7 @@ function Hero() {
             className="flex flex-wrap gap-4 mt-10"
           >
             <a
-              href="https://open.spotify.com/album/6tkjU4Umpo79wwkgPMV3nZ"
+              href="https://open.spotify.com/album/1bnHPO4dKK7IjvgrtVBcQh"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-slime text-black font-body font-bold text-sm uppercase tracking-widest hover:bg-white transition-colors"
@@ -193,6 +195,7 @@ function Hero() {
 
 function Tracklist() {
   const [hoveredIdx, setHoveredIdx] = useState(null)
+  const [showPlayer, setShowPlayer] = useState(false)
 
   return (
     <section id="tracks" className="bg-black py-24 px-8 lg:px-16">
@@ -204,12 +207,39 @@ function Tracklist() {
             <h2 className="font-display text-6xl lg:text-8xl text-outline leading-none">18</h2>
             <h2 className="font-display text-6xl lg:text-8xl text-white leading-none -mt-2">TRACKS</h2>
           </div>
-          <div className="text-right text-white/20 text-xs font-body">
-            <div>YOUNG THUG</div>
-            <div>SO MUCH FUN</div>
-            <div>2019</div>
+          <div className="flex flex-col items-end gap-3">
+            <div className="text-right text-white/20 text-xs font-body">
+              <div>YOUNG THUG</div>
+              <div>SO MUCH FUN</div>
+              <div>2019</div>
+            </div>
+            <button
+              onClick={() => setShowPlayer(s => !s)}
+              className="flex items-center gap-2 px-4 py-2 border border-slime/40 text-slime font-body text-xs uppercase tracking-widest hover:bg-slime hover:text-black transition-all"
+            >
+              <Play size={10} fill="currentColor" />
+              {showPlayer ? 'Hide Player' : 'Play Album'}
+            </button>
           </div>
         </div>
+
+        {/* Spotify embed player */}
+        {showPlayer && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            className="mb-8 overflow-hidden"
+          >
+            <iframe
+              src={`https://open.spotify.com/embed/album/${SPOTIFY_ALBUM_ID}?utm_source=generator&theme=0`}
+              width="100%"
+              height="380"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            />
+          </motion.div>
+        )}
 
         {/* Track rows */}
         <div className="divide-y divide-white/5">
@@ -243,12 +273,14 @@ function Tracklist() {
                     </div>
                   )}
                 </div>
-                <div
-                  className="flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                <button
+                  onClick={() => setShowPlayer(true)}
+                  className="flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
                   style={{ borderColor: color }}
+                  title={`Play ${track.title} on Spotify`}
                 >
                   <Play size={10} fill={color} color={color} />
-                </div>
+                </button>
               </motion.div>
             )
           })}
@@ -386,14 +418,13 @@ function VideoSection() {
         <div className="relative aspect-video bg-zinc-900 overflow-hidden group">
           {!playing ? (
             <>
-              <div className="absolute inset-0 bg-gradient-to-br from-slime/20 to-pink/20 flex items-center justify-center">
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: 'linear-gradient(rgba(168,232,71,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(168,232,71,0.05) 1px, transparent 1px)',
-                    backgroundSize: '60px 60px',
-                  }}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <img
+                  src="https://img.youtube.com/vi/Zo_DmFSxRvk/maxresdefault.jpg"
+                  alt="The London music video thumbnail"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-black/50" />
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -402,7 +433,7 @@ function VideoSection() {
                 >
                   <Play size={32} fill="#000" color="#000" className="ml-1" />
                 </motion.button>
-                <div className="absolute bottom-6 left-6 text-white/40 font-body text-xs uppercase tracking-widest">
+                <div className="absolute bottom-6 left-6 text-white/60 font-body text-xs uppercase tracking-widest z-10">
                   Official Music Video
                 </div>
               </div>
@@ -559,11 +590,11 @@ function Footer() {
         </div>
 
         <div className="text-right">
-          <div className="text-white/10 font-body text-xs">
+          <div className="text-white/40 font-body text-xs">
             Concept site. Not affiliated with Young Thug or YSL Records.
           </div>
-          <div className="text-white/10 font-body text-xs mt-1">
-            Design by <a href="https://sahari.io" className="text-slime/40 hover:text-slime transition-colors">sahari.io</a>
+          <div className="text-white/40 font-body text-xs mt-1">
+            Design by <a href="https://sahari.io" className="text-slime hover:text-white transition-colors">sahari.io</a>
           </div>
         </div>
       </div>
