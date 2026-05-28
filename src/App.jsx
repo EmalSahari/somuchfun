@@ -5,24 +5,25 @@ import { Play, ExternalLink, ShoppingBag, MapPin, Calendar, ChevronRight } from 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const TRACKS = [
-  { n: '01', title: 'I Know',                feat: null },
-  { n: '02', title: 'Surf',                  feat: null },
-  { n: '03', title: 'Hot',                   feat: 'Gunna' },
-  { n: '04', title: 'Jumped Out the Window', feat: null },
-  { n: '05', title: 'Rocket Launcher',       feat: null },
-  { n: '06', title: 'Sup Mate',              feat: 'Future' },
-  { n: '07', title: 'Bad Bad Bad',           feat: 'Lil Baby' },
-  { n: '08', title: 'Crushed Up',            feat: null },
-  { n: '09', title: 'Big Tipper',            feat: null },
-  { n: '10', title: 'Ecstasy',               feat: 'Future' },
-  { n: '11', title: 'Yea Yea',               feat: 'J. Cole & Young Scooter' },
-  { n: '12', title: 'Mannequin Challenge',   feat: null },
-  { n: '13', title: 'Take Care',             feat: null },
-  { n: '14', title: 'Biggest Alley Oop',    feat: 'Lil Uzi Vert & Quavo' },
-  { n: '15', title: 'Lemon',                 feat: 'Gunna' },
-  { n: '16', title: 'The London',            feat: 'J. Cole & Travis Scott' },
-  { n: '17', title: "Tomorrow 'Til Infinity",feat: null },
-  { n: '18', title: 'Original',              feat: 'Gunna & Lil Baby' },
+  { n: '01', title: 'Just How It Is',         feat: null },
+  { n: '02', title: 'Sup Mate',               feat: 'Future' },
+  { n: '03', title: 'Ecstasy',                feat: 'Machine Gun Kelly' },
+  { n: '04', title: 'Hot',                    feat: 'Gunna' },
+  { n: '05', title: 'Light It Up',            feat: null },
+  { n: '06', title: 'Surf',                   feat: 'Gunna' },
+  { n: '07', title: 'Bad Bad Bad',            feat: 'Lil Baby' },
+  { n: '08', title: 'Lil Baby',               feat: null },
+  { n: '09', title: "What's the Move",        feat: 'Lil Uzi Vert' },
+  { n: '10', title: 'I Bought Her',           feat: 'Lil Duke' },
+  { n: '11', title: 'Jumped Out the Window',  feat: null },
+  { n: '12', title: "I'm Scared",             feat: '21 Savage & Doe Boy' },
+  { n: '13', title: 'Cartier Gucci Scarf',    feat: 'Lil Duke' },
+  { n: '14', title: 'Big Tipper',             feat: 'Lil Keed' },
+  { n: '15', title: 'Pussy',                  feat: null },
+  { n: '16', title: 'Circle of Bosses',       feat: 'Quavo' },
+  { n: '17', title: 'Mannequin Challenge',    feat: 'Juice WRLD' },
+  { n: '18', title: 'Boy Back',               feat: 'Nav' },
+  { n: '19', title: 'The London',             feat: 'J. Cole & Travis Scott' },
 ]
 
 const SPOTIFY_ALBUM_ID = '1bnHPO4dKK7IjvgrtVBcQh'
@@ -52,7 +53,7 @@ const MERCH = [
 // ─── Components ──────────────────────────────────────────────────────────────
 
 function Marquee() {
-  const text = '  SO MUCH FUN  ·  YOUNG THUG  ·  YSL  ·  300 ENTERTAINMENT  ·  2019  ·'
+  const text = '  SO MUCH FUN  ·  YOUNG THUG  ·  YSL  ·  300 ENTERTAINMENT  ·  19 TRACKS  ·  2019  ·'
   const repeated = text.repeat(6)
   return (
     <div className="overflow-hidden border-y border-slime/30 py-3 bg-black">
@@ -181,7 +182,7 @@ function Hero() {
         transition={{ delay: 0.8 }}
         className="relative z-10 px-8 pb-6 flex items-center gap-4 text-white/20 text-xs font-body tracking-widest uppercase"
       >
-        <span>18 Tracks</span>
+        <span>19 Tracks</span>
         <span className="text-slime">·</span>
         <span>YSL Records</span>
         <span className="text-slime">·</span>
@@ -204,7 +205,7 @@ function Tracklist() {
         <div className="flex items-end justify-between mb-12">
           <div>
             <p className="text-slime/60 font-body text-xs tracking-[0.4em] uppercase mb-2">Full Tracklist</p>
-            <h2 className="font-display text-6xl lg:text-8xl text-outline leading-none">18</h2>
+            <h2 className="font-display text-6xl lg:text-8xl text-outline leading-none">19</h2>
             <h2 className="font-display text-6xl lg:text-8xl text-white leading-none -mt-2">TRACKS</h2>
           </div>
           <div className="flex flex-col items-end gap-3">
@@ -312,7 +313,7 @@ function AboutAlbum() {
           NO <span className="text-slime">FILLER</span>
         </h2>
         <p className="text-white/70 font-body text-lg leading-relaxed max-w-xl mb-6">
-          Eighteen tracks deep, "So Much Fun" debuted at #1 on the Billboard 200 — Young Thug's first number one album. A definitive snapshot of late-2010s Atlanta, stacked with features from Future, Gunna, Lil Baby, Travis Scott, J. Cole and more.
+          Nineteen tracks deep, "So Much Fun" debuted at #1 on the Billboard 200 — Young Thug's first number one album. A definitive snapshot of late-2010s Atlanta, stacked with features from Future, Gunna, Lil Baby, Travis Scott, J. Cole and more.
         </p>
         <div className="flex flex-wrap gap-6 text-xs font-body tracking-widest uppercase text-white/40">
           <div>
@@ -364,7 +365,7 @@ function DeluxeEdition() {
             <div className="flex items-baseline justify-between">
               <div>
                 <div className="font-display text-2xl text-white">SO MUCH FUN</div>
-                <div className="text-white/40 font-body text-xs tracking-widest uppercase mt-1">Standard · 18 tracks</div>
+                <div className="text-white/40 font-body text-xs tracking-widest uppercase mt-1">Standard · 19 tracks</div>
               </div>
               <div className="text-slime font-body text-xs tracking-widest uppercase">2019</div>
             </div>
@@ -420,7 +421,7 @@ function VideoSection() {
             <>
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
-                  src="https://img.youtube.com/vi/Zo_DmFSxRvk/maxresdefault.jpg"
+                  src="https://img.youtube.com/vi/G8Hp-AKrfm0/maxresdefault.jpg"
                   alt="The London music video thumbnail"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -441,7 +442,7 @@ function VideoSection() {
           ) : (
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/Zo_DmFSxRvk?autoplay=1"
+              src="https://www.youtube.com/embed/G8Hp-AKrfm0?autoplay=1"
               title="The London"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
