@@ -582,9 +582,9 @@ function Footer() {
         </div>
 
         <div className="flex flex-col gap-2 text-white/30 text-xs font-body tracking-widest uppercase">
-          <a href="https://www.instagram.com/youngthug/" target="_blank" rel="noopener noreferrer" className="hover:text-slime transition-colors">Instagram</a>
+          <a href="https://www.instagram.com/thuggerthugger1/" target="_blank" rel="noopener noreferrer" className="hover:text-slime transition-colors">Instagram</a>
           <a href="https://x.com/youngthug" target="_blank" rel="noopener noreferrer" className="hover:text-slime transition-colors">Twitter / X</a>
-          <a href="https://www.youtube.com/@YoungThugVEVO" target="_blank" rel="noopener noreferrer" className="hover:text-slime transition-colors">YouTube</a>
+          <a href="https://www.youtube.com/channel/UCuwdplPbuTFZj_64d03tSBA" target="_blank" rel="noopener noreferrer" className="hover:text-slime transition-colors">YouTube</a>
         </div>
 
         <div className="text-right">
