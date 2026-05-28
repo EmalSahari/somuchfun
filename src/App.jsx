@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Play, ExternalLink, ShoppingBag, MapPin, Calendar, ChevronRight } from 'lucide-react'
+import { Play, ShoppingBag, MapPin, ChevronRight } from 'lucide-react'
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -582,12 +582,9 @@ function Footer() {
         </div>
 
         <div className="flex flex-col gap-2 text-white/30 text-xs font-body tracking-widest uppercase">
-          <a href="https://youngthug.com" target="_blank" rel="noopener noreferrer" className="hover:text-slime transition-colors flex items-center gap-1">
-            youngthug.com <ExternalLink size={10} />
-          </a>
-          <a href="#" className="hover:text-slime transition-colors">Instagram</a>
-          <a href="#" className="hover:text-slime transition-colors">Twitter / X</a>
-          <a href="#" className="hover:text-slime transition-colors">YouTube</a>
+          <a href="https://www.instagram.com/youngthug/" target="_blank" rel="noopener noreferrer" className="hover:text-slime transition-colors">Instagram</a>
+          <a href="https://x.com/youngthug" target="_blank" rel="noopener noreferrer" className="hover:text-slime transition-colors">Twitter / X</a>
+          <a href="https://www.youtube.com/@YoungThugVEVO" target="_blank" rel="noopener noreferrer" className="hover:text-slime transition-colors">YouTube</a>
         </div>
 
         <div className="text-right">
